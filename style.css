@@ -1,0 +1,413 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    text-decoration: none;
+    font-family: 'Mulish', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.category {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px auto;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.category:last-child {
+    border-bottom: none;
+}
+
+
+.categoryy {
+    max-width: 200px;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 10px auto 30px;
+    text-align: center;
+    position: relative;
+}
+
+.categoryy::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 97%;
+    border-bottom: 1px dotted #000;
+    left: 50%;
+    /* Sol kenarı ortala */
+    transform: translateX(-50%);
+    /* Sol kenarı ortala */
+
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 94%;
+    margin: 0 auto 15px;
+    position: relative;
+    border: 1px solid #0000002d;
+    border-radius: 25px;
+    padding: 8px 10px;
+    background-color: #ffffffb2;
+}
+
+.content::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    /* border-bottom: 1px solid #886565; */
+}
+
+.image img {
+    width: 102px;
+    height: 102px;
+    border-radius: 20%;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    font-style: normal;
+    color: #1b1b1b;
+}
+
+.details {
+    margin-left: 5px;
+    max-width: 100%;
+    margin-top: 2px;
+    color: #646464;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    text-align: end;
+    flex: 1;
+    margin-left: 8px;
+}
+
+
+:root {
+    --animation-speed: 300ms;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    background-color: #F5F5F5;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--animation-speed) all;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: #FFFFFF;
+    border-right: 1px solid #ddd;
+    transform: translateX(-100%);
+    transition: var(--animation-speed) transform;
+    z-index: 5;
+
+}
+
+.menu ul li {
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul li a {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 15px 20px;
+    color: #3E3E3E;
+}
+
+.menu ul li a:hover {
+    background-color: #daa646;
+}
+
+.container {
+    background: #F5F5F5;
+    transition: var(--animation-speed) transform;
+}
+
+.container .header {
+    height: 60px;
+    border-bottom: 1px solid #b29a632a;
+    display: flex;
+    align-items: center;
+    background: #2E2E2E;
+    padding: 0 20px;
+    z-index: 150;
+}
+
+.container .logo {
+    color: #FFFFFF;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #b29a632a;
+}
+
+/**
+    Hamburger menu kodları
+**/
+.hamburger-menu {
+    --height: 2.4px;
+    --space: calc(var(--height) * 2.5);
+    --animation-speed: 300ms;
+    width: calc(var(--space) * 4);
+    height: calc(var(--height) + (var(--space) * 2));
+    display: block;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+.hamburger-menu span,
+.hamburger-menu span::before,
+.hamburger-menu span::after {
+    content: '';
+    display: block;
+    height: var(--height);
+    width: 100%;
+    background: #222;
+
+}
+
+.hamburger-menu span {
+    transform: translateY(var(--space));
+    transition: var(--animation-speed) var(--animation-speed) background-color;
+    background-color: #fff;
+
+}
+
+.hamburger-menu span::before {
+    position: absolute;
+    bottom: var(--space);
+    transition: var(--animation-speed) transform, var(--animation-speed) var(--animation-speed) bottom;
+    background-color: #fff;
+
+}
+
+.hamburger-menu span::after {
+    position: absolute;
+    top: var(--space);
+    transition: var(--animation-speed) transform, var(--animation-speed) var(--animation-speed) top;
+    background-color: #fff;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked~nav.menu {
+    transform: translateX(0);
+}
+
+#menu-toggle:checked~.container {
+    transform: translateX(300px);
+}
+
+#menu-toggle:checked~.container .backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+#menu-toggle:checked~.container .hamburger-menu span {
+    background: transparent;
+    transition: var(--animation-speed) background-color;
+    background-color: #ffffff00;
+
+}
+
+#menu-toggle:checked~.container .hamburger-menu span::before {
+    transform: rotate(-45deg);
+    bottom: 0;
+    background-color: #fff;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) bottom;
+}
+
+#menu-toggle:checked~.container .hamburger-menu span::after {
+    transform: rotate(45deg);
+    top: 0;
+    background-color: #fff;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) top;
+}
+
+/* overlay */
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Hafifçe saydam siyah arkaplan */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    z-index: 9999;
+}
+
+.overlay-content {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #f2f2f2;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    /* Kenarlara yuvarlaklık ver */
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Hafif bir gölgelendirme */
+}
+
+.close-btn {
+    color: #cd9617;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#overlay-image img {
+    width: 100%;
+    border-radius: 8px;
+    /* Kenarlara yuvarlaklık ver */
+}
+
+#overlay-details {
+    padding-top: 5px;
+    text-align: center;
+}
+
+#overlay-product-name {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+#overlay-product-description {
+    font-style: italic;
+    margin-top: 5px;
+    color: #525151;
+}
+
+
+/* preloader */
+#preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 9999;
+}
+
+#loader {
+    width: 300px;
+    height: 100px;
+    position: relative;
+    background-image: url('logo2.png');
+    /* Logo görüntüsünün yolu */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: none;
+    border-radius: 0%;
+    animation: spin 2s linear infinite, pulse 0.7s infinite alternate;
+    /* Animasyon süresi ve parlama süresi ayarlandı */
+}
+
+#progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    /* İlerleme çizgisi yüksekliği */
+    background-color: #c0af2d;
+    /* İlerleme çizgisinin rengi */
+    animation: progress 1s linear infinite;
+    /* İlerleme animasyonu */
+}
+
+@keyframes progress {
+    0% {
+        width: 0;
+        /* Başlangıçta çizgi yok */
+    }
+
+    100% {
+        width: 100%;
+        /* Tam dolunca çizgi tamamlayacak */
+    }
+}

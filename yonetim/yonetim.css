@@ -1,0 +1,314 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+    text-decoration: none;
+    font-family: 'Mulish', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --animation-speed: 300ms;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    background: #F5F5F5 ;
+
+}
+
+.right-button {
+    background-color: #db6a41;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+}
+
+.right-button:hover {
+    background-color: #d8663cd6;
+    color: #fff;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--animation-speed) all;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: #fdfbfb ;
+    border-right: 1px solid #ddd;
+    transform: translateX(-100%);
+    transition: var(--animation-speed) transform;
+    z-index: 100;
+}
+
+.menu ul li {
+    border-bottom: 1px solid #13131371;
+}
+
+.menu ul li a {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 15px 20px;
+    color: #3E3E3E;
+}
+
+.menu ul li a:hover {
+    background-color: #daa646;
+}
+
+.container {
+    background: #eee;
+    transition: var(--animation-speed) transform;
+}
+
+.container .header {
+    height: 60px;
+    border-bottom: 1px solid #0e0e0e;
+    display: flex;
+    align-items: center;
+    background: #2E2E2E ;
+    padding: 0 20px;
+}
+
+.container .actions {
+    margin-left: auto;
+}
+
+.container .logo {
+    color: #fff;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+
+/**
+    Hamburger menu kodları
+**/
+.hamburger-menu {
+    --height: 2.4px;
+    --space: calc(var(--height) * 2.5);
+    --animation-speed: 300ms;
+    width: calc(var(--space) * 4);
+    height: calc(var(--height) + (var(--space) * 2));
+    display: block;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+.hamburger-menu span,
+.hamburger-menu span::before,
+.hamburger-menu span::after {
+    content: '';
+    display: block;
+    height: var(--height);
+    width: 100%;
+    background: #fff;
+}
+
+.hamburger-menu span {
+    transform: translateY(var(--space));
+    transition: var(--animation-speed) var(--animation-speed) background-color;
+}
+
+.hamburger-menu span::before {
+    position: absolute;
+    bottom: var(--space);
+    transition: var(--animation-speed) transform, var(--animation-speed) var(--animation-speed) bottom;
+}
+
+.hamburger-menu span::after {
+    position: absolute;
+    top: var(--space);
+    transition: var(--animation-speed) transform, var(--animation-speed) var(--animation-speed) top;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-toggle:checked~nav.menu {
+    transform: translateX(0);
+}
+
+#menu-toggle:checked~.container {
+    transform: translateX(300px);
+}
+
+#menu-toggle:checked~.container .backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+#menu-toggle:checked~.container .hamburger-menu span {
+    background: transparent;
+    transition: var(--animation-speed) background-color;
+}
+
+#menu-toggle:checked~.container .hamburger-menu span::before {
+    transform: rotate(-45deg);
+    bottom: 0;
+    background-color: #fff;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) bottom;
+}
+
+#menu-toggle:checked~.container .hamburger-menu span::after {
+    transform: rotate(45deg);
+    top: 0;
+    background-color: #fff;
+    transition: var(--animation-speed) var(--animation-speed) transform, var(--animation-speed) top;
+}
+
+/* Table */
+
+
+/* Tablo stilini burada tanımlayabilirsiniz */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    /* Tabloyu yatayda ortala */
+}
+
+th,
+td {
+    border: 1px solid #070707;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f87b4eef;
+    color: #000000;
+}
+
+tr {
+    border-bottom: 1px solid #090909;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td input,
+td select,
+td select option {
+    text-align: center;
+    background-color: transparent;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+td select[name="stokDurumu"] {
+    font-size: 16px;
+    background-color: #eee;
+    color: #000000;
+    font-weight: bolder;
+    width: 110px;
+}
+
+
+
+@media (min-width: 768.1px) {
+    td input[name="fiyati"] {
+        width: 30px;
+    }
+
+    td input[name="urunAciklamasi"] {
+        width: 400px;
+    }
+}
+
+
+
+/* Tabloyu responsive hale getir */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        display: block;
+    }
+
+    th {
+        display: none;
+        /* thead'ı gizle */
+    }
+
+    tr {
+        border-bottom: 20px solid #eee;
+        /* Her tr arasına çizgi ekleyin */
+    }
+
+    td input[name="urunAdi"] {
+        color: rgb(9, 9, 9);
+        font-weight: bold;
+    }
+    td:nth-child(1) {
+    background-color: #f87b4eef;
+    }
+
+    .right-button {
+        background-color: #db6a41 ;
+        color: #fff;
+        padding: 10px 10px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+    }   
+}
+
+
+
+
+
+/* Düzenleme için giriş kutularını stil ayarları */
+.edit-input {
+    width: 50%;
+}
+
+/* Onayla butonu için stil ayarları */
+#confirm-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

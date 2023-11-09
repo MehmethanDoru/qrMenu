@@ -1,0 +1,12 @@
+2023-09-16 02:45:27 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Kruvasan', urun_aciklamasi='Çıtır ve lezzetli hamurun tadını çıkarın.', urun_fiyat='40₺', stok='1' WHERE urun_id = 12
+2023-09-16 12:40:53 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Kruvasan', urun_aciklamasi='Çıtır ve lezzetli hamurun tadını çıkarın.', urun_fiyat='40₺', stok='0' WHERE urun_id = 12
+2023-09-16 12:40:56 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Sandviç', urun_aciklamasi='Hızlı ve pratik bir atıştırmalık seçeneği.', urun_fiyat='35₺', stok='0' WHERE urun_id = 14
+2023-09-16 12:41:15 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Sandviç', urun_aciklamasi='Hızlı ve pratik bir atıştırmalık seçeneği.', urun_fiyat='35₺', stok='1' WHERE urun_id = 14
+2023-09-16 12:41:40 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Kruvasan', urun_aciklamasi='Çıtır ve lezzetli hamurun tadını çıkarın.', urun_fiyat='40₺', stok='1' WHERE urun_id = 12
+2023-09-24 22:58:21 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Kruvasan', urun_aciklamasi='Çıtır ve lezzetli hamurun tadını çıkarın.', urun_fiyat='40₺', stok='0' WHERE urun_id = 12
+2023-09-24 22:58:40 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Mini Pizza', urun_aciklamasi='Küçük boyutlu pizza, büyük lezzet.', urun_fiyat='17₺', stok='0' WHERE urun_id = 13
+2023-09-24 22:58:47 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Kruvasan', urun_aciklamasi='Çıtır ve lezzetli hamurun tadını çıkarın.', urun_fiyat='40₺', stok='1' WHERE urun_id = 12
+2023-09-24 23:08:22 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Kruvasan', urun_aciklamasi='Çıtır ve lezzetli hamurun tadını çıkarın.', urun_fiyat='40₺', stok='0' WHERE urun_id = 12
+2023-09-24 23:12:13 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Limonata', urun_aciklamasi='Taze limon lezzetiyle ferahlatıcı bir içecek.', urun_fiyat='55₺', stok='1' WHERE urun_id = 9
+2023-09-24 23:12:17 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Bubble Tea', urun_aciklamasi='Renkli ve lezzetli baloncuklu içeceğin keyfini çıkarın.', urun_fiyat='65₺', stok='1' WHERE urun_id = 8
+2023-09-24 23:12:22 - SQL Sorgusu: UPDATE ürünler SET urun_adi='Fanta', urun_aciklamasi='Tatlı ve meyveli Fantanın serinletici tadı.', urun_fiyat='30₺', stok='1' WHERE urun_id = 11
